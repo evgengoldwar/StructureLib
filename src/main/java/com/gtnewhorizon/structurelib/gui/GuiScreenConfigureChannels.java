@@ -33,7 +33,7 @@ public class GuiScreenConfigureChannels extends GuiScreen implements IGuiScreen 
 
     public GuiScreenConfigureChannels(ItemStack trigger) {
         this.trigger = trigger;
-        list = new GuiChannelsList(152, 100, 12, 12, 14);
+        list = new GuiChannelsList(152, 75, 12, 12, 14);
         list.addSelectionListener((list, selectedIndex) -> {
             Entry<String, Integer> e = list.getElementAt(selectedIndex);
             key.setText(e.getKey());
@@ -51,7 +51,7 @@ public class GuiScreenConfigureChannels extends GuiScreen implements IGuiScreen 
         guiLeft = (this.width - this.getXSize()) / 2;
         guiTop = (this.height - this.getYSize()) / 2;
 
-        key = new GuiTextField(fontRendererObj, guiLeft + 45, guiTop + 119, 151 + 12 - 45, 12) {
+        key = new GuiTextField(fontRendererObj, guiLeft + 45, guiTop + 90, 151 + 12 - 45, 12) {
 
             @Override
             public void writeText(String text) {
@@ -78,7 +78,7 @@ public class GuiScreenConfigureChannels extends GuiScreen implements IGuiScreen 
                 updateButtons();
             }
         };
-        value = new GuiTextField(fontRendererObj, guiLeft + 45, guiTop + 139, 151 + 12 - 45, 12) {
+        value = new GuiTextField(fontRendererObj, guiLeft + 45, guiTop + 110, 151 + 12 - 45, 12) {
 
             @Override
             public void writeText(String text) {
@@ -150,6 +150,14 @@ public class GuiScreenConfigureChannels extends GuiScreen implements IGuiScreen 
                         47,
                         20,
                         I18n.format("item.structurelib.constructableTrigger.gui.wipe")));
+        addButton(
+            new GuiButton(
+                3,
+                guiLeft + 20,
+                guiTop + 130,
+                20,
+                20,
+                I18n.format("item.structurelib.constructableTrigger.gui.hatch")));
 
         updateButtons();
     }
@@ -313,14 +321,19 @@ public class GuiScreenConfigureChannels extends GuiScreen implements IGuiScreen 
         fontRendererObj.drawString(
                 I18n.format("item.structurelib.constructableTrigger.gui.key"),
                 guiLeft + 12,
-                guiTop + 122,
+                guiTop + 93,
                 0);
         key.drawTextBox();
         fontRendererObj.drawString(
                 I18n.format("item.structurelib.constructableTrigger.gui.value"),
                 guiLeft + 12,
-                guiTop + 142,
+                guiTop + 113,
                 0);
+        fontRendererObj.drawString(
+            I18n.format("item.structurelib.constructableTrigger.gui.hatch_text"),
+            guiLeft + 50,
+            guiTop + 136,
+            0);
         value.drawTextBox();
     }
 

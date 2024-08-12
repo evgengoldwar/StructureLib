@@ -35,6 +35,8 @@ item.structurelib.constructableTrigger.gui.add=Add
 item.structurelib.constructableTrigger.gui.set=Set
 item.structurelib.constructableTrigger.gui.unset=Unset
 item.structurelib.constructableTrigger.gui.wipe=§4Wipe
+item.structurelib.constructableTrigger.gui.hatch=§6V
+item.structurelib.constructableTrigger.gui.hatch_text=Auto place hatches
 
 structurelib.autoplace.built_stat=Built %s blocks
 structurelib.autoplace.complete=§aThis multiblock has completed!
