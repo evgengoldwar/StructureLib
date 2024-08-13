@@ -3,6 +3,7 @@ package com.gtnewhorizon.structurelib.gui;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import net.minecraft.client.gui.GuiButton;
@@ -287,6 +288,11 @@ public class GuiScreenConfigureChannels extends GuiScreen implements IGuiScreen 
             case 2:
                 ChannelDataAccessor.wipeChannelData(trigger);
                 break;
+            case 3:
+                String channel = "hatch";
+                if (ChannelDataAccessor.hasSubChannel(trigger, channel)) {
+                    ChannelDataAccessor.unsetChannelData(trigger, channel);
+                } else ChannelDataAccessor.setChannelData(trigger, channel, 1);
         }
         super.actionPerformed(btn);
     }
