@@ -3,7 +3,6 @@ package com.gtnewhorizon.structurelib.gui;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map.Entry;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 import net.minecraft.client.gui.GuiButton;
@@ -152,13 +151,13 @@ public class GuiScreenConfigureChannels extends GuiScreen implements IGuiScreen 
                         20,
                         I18n.format("item.structurelib.constructableTrigger.gui.wipe")));
         addButton(
-            new GuiButton(
-                3,
-                guiLeft + 20,
-                guiTop + 130,
-                20,
-                20,
-                I18n.format("item.structurelib.constructableTrigger.gui.hatch")));
+                new GuiButton(
+                        3,
+                        guiLeft + 20,
+                        guiTop + 130,
+                        20,
+                        20,
+                        I18n.format("item.structurelib.constructableTrigger.gui.hatch")));
 
         updateButtons();
     }
@@ -336,10 +335,10 @@ public class GuiScreenConfigureChannels extends GuiScreen implements IGuiScreen 
                 guiTop + 113,
                 0);
         fontRendererObj.drawString(
-            I18n.format("item.structurelib.constructableTrigger.gui.hatch_text"),
-            guiLeft + 50,
-            guiTop + 136,
-            0);
+                I18n.format("item.structurelib.constructableTrigger.gui.hatch_text"),
+                guiLeft + 50,
+                guiTop + 136,
+                0);
         value.drawTextBox();
     }
 
